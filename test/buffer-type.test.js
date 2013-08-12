@@ -33,9 +33,26 @@ describe('buffer-type.test.js', function () {
         expect.width = Number(m[1]);
         expect.height = Number(m[2]);
       }
-      bt(fs.readFileSync(filepath)).should.eql(expect);
+      var r = bt(fs.readFileSync(filepath));
+      for (var k in expect) {
+        r.should.have.property(k, expect[k]);
+      }
     });
 
+  });
+
+  it('should detect logo.png to .png', function () {
+    bt(fs.readFileSync(path.join(path.dirname(__dirname), 'logo.png'))).should.eql({
+      type: 'image/png',
+      extension: '.png',
+      width: 618,
+      height: 96,
+      bit: 8,
+      color: 6,
+      compression: 0,
+      filter: 0,
+      interlace: 0
+    });
   });
 
   it('should not detect any type', function () {

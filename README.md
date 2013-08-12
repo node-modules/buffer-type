@@ -20,9 +20,14 @@ var info = bt(fs.readFileSync(__dirname + '/logo.png'));
 console.log(info);
 // {
 //   type: 'image/png',
-//   extension: 'png',
-//   width: 16,
-//   height: 16
+//    extension: '.png',
+//    width: 618,
+//    height: 96,
+//    bit: 8, // bit depth
+//    color: 6,
+//    compression: 0,
+//    filter: 0,
+//    interlace: 0
 // }
 ```
 
@@ -30,6 +35,7 @@ console.log(info);
 
 * http://www.onicos.com/staff/iz/formats/
 * http://www.fastgraph.com/help/image_file_header_formats.html
+* http://en.wikipedia.org/wiki/Portable_Network_Graphics
 
 ## License 
 
