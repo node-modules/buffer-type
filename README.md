@@ -8,17 +8,28 @@ Detect content-type from Buffer data.
 ## Install
 
 ```bash
-$ npm install buffer-type
+$ npm install bt
 ```
 
 ## Usage
 
 ```js
-var bf = require('buffer-type');
+var bt = require('bt');
 
-var type = bf(fs.readFileSync(__dirname + '/logo.png'));
-console.log(type); // "image/png"
+var info = bt(fs.readFileSync(__dirname + '/logo.png'));
+console.log(info);
+// {
+//   type: 'image/png',
+//   extension: 'png',
+//   width: 16,
+//   height: 16
+// }
 ```
+
+## References
+
+* http://www.onicos.com/staff/iz/formats/
+* http://www.fastgraph.com/help/image_file_header_formats.html
 
 ## License 
 
