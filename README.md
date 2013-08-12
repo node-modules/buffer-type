@@ -41,6 +41,45 @@ console.log(info);
 * http://en.wikipedia.org/wiki/Portable_Network_Graphics
 * http://en.wikipedia.org/wiki/Image_file_format
 
+## TODO
+
+* Image
+  * [√] .png
+  * [√] .jpg
+  * [√] .bmp
+  * [√] .gif
+* Tar
+  * [ ] .tar
+  * [ ] .gzip
+  * [ ] .zip
+  * [ ] .rar
+* PE file
+  * [ ] .exe
+  * [ ] .msi
+  * [ ] .apk
+  * [ ] .ipa
+* Text
+  * [ ] .xml
+  * [ ] .html
+* Media
+  * [ ] .mp3
+  * [ ] .mp4
+  * [ ] .avi
+
+## Authors
+
+```bash
+$ git summary 
+
+ project  : buffer-type
+ repo age : 8 hours
+ active   : 2 days
+ commits  : 5
+ files    : 17
+ authors  : 
+     5  fengmk2                 100.0%
+```
+
 ## License 
 
 (The MIT License)
