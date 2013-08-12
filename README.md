@@ -17,6 +17,7 @@ $ npm install bt
 
 ```js
 var bt = require('bt');
+var fs = require('fs');
 
 var info = bt(fs.readFileSync(__dirname + '/logo.png'));
 console.log(info);
