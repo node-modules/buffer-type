@@ -1,5 +1,7 @@
-buffer-type [![Build Status](https://secure.travis-ci.org/fengmk2/buffer-type.png)](http://travis-ci.org/fengmk2/buffer-type) [![Coverage Status](https://coveralls.io/repos/fengmk2/buffer-type/badge.png)](https://coveralls.io/r/fengmk2/buffer-type) [![Build Status](https://drone.io/github.com/fengmk2/buffer-type/status.png)](https://drone.io/github.com/fengmk2/buffer-type/latest)
+buffer-type
 =======
+
+[![Build Status](https://secure.travis-ci.org/fengmk2/buffer-type.png)](http://travis-ci.org/fengmk2/buffer-type) [![Coverage Status](https://coveralls.io/repos/fengmk2/buffer-type/badge.png)](https://coveralls.io/r/fengmk2/buffer-type) [![Build Status](https://drone.io/github.com/fengmk2/buffer-type/status.png)](https://drone.io/github.com/fengmk2/buffer-type/latest)
 
 ![logo](https://raw.github.com/fengmk2/buffer-type/master/logo.png)
 
@@ -36,6 +38,7 @@ console.log(info);
 * http://www.onicos.com/staff/iz/formats/
 * http://www.fastgraph.com/help/image_file_header_formats.html
 * http://en.wikipedia.org/wiki/Portable_Network_Graphics
+* http://en.wikipedia.org/wiki/Image_file_format
 
 ## License 
 

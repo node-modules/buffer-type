@@ -16,6 +16,8 @@ var mime = require('mime');
 var should = require('should');
 var bt = require('../');
 
+var root = path.dirname(__dirname);
+
 var names = fs.readdirSync(path.join(__dirname, 'fixtures'));
 describe('buffer-type.test.js', function () {
   names.forEach(function (name) {
@@ -42,7 +44,7 @@ describe('buffer-type.test.js', function () {
   });
 
   it('should detect logo.png to .png', function () {
-    bt(fs.readFileSync(path.join(path.dirname(__dirname), 'logo.png'))).should.eql({
+    bt(fs.readFileSync(path.join(root, 'logo.png'))).should.eql({
       type: 'image/png',
       extension: '.png',
       width: 618,
@@ -52,6 +54,13 @@ describe('buffer-type.test.js', function () {
       compression: 0,
       filter: 0,
       interlace: 0
+    });
+  });
+
+  it('should detect jpeg missing width and height', function () {
+    bt(fs.readFileSync(path.join(__dirname, 'fixtures', '1_607x78.jpg')).slice(0, 60)).should.eql({
+      type: 'image/jpeg',
+      extension: '.jpg'
     });
   });
 
