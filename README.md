@@ -10,13 +10,13 @@ Detect content-type from Buffer data.
 ## Install
 
 ```bash
-$ npm install bt
+$ npm install buffer-type
 ```
 
 ## Usage
 
 ```js
-var bt = require('bt');
+var bt = require('buffer-type');
 var fs = require('fs');
 
 var info = bt(fs.readFileSync(__dirname + '/logo.png'));

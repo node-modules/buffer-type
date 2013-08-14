@@ -1,5 +1,5 @@
 {
-  "name": "bt",
+  "name": "buffer-type",
   "version": "0.0.1",
   "description": "Detect content-type from Buffer data.",
   "main": "index.js",
