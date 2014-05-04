@@ -1,11 +1,13 @@
 buffer-type
 =======
 
-[![Build Status](https://secure.travis-ci.org/fengmk2/buffer-type.png)](http://travis-ci.org/fengmk2/buffer-type) [![Coverage Status](https://coveralls.io/repos/fengmk2/buffer-type/badge.png)](https://coveralls.io/r/fengmk2/buffer-type) [![Build Status](https://drone.io/github.com/fengmk2/buffer-type/status.png)](https://drone.io/github.com/fengmk2/buffer-type/latest)
+[![Build Status](https://secure.travis-ci.org/node-modules/buffer-type.png)](http://travis-ci.org/node-modules/buffer-type)
+
+[![Coverage Status](https://coveralls.io/repos/node-modules/buffer-type/badge.png)](https://coveralls.io/r/node-modules/buffer-type)
 
 [![NPM](https://nodei.co/npm/buffer-type.png?downloads=true&stars=true)](https://nodei.co/npm/buffer-type/)
 
-![logo](https://raw.github.com/fengmk2/buffer-type/master/logo.png)
+![logo](https://raw.github.com/node-modules/buffer-type/master/logo.png)
 
 Detect content-type from Buffer data.
 
@@ -51,6 +53,9 @@ console.log(info);
   * [√] .bmp
   * [√] .gif
   * [√] .webp
+  * [ ] .svg
+  * [ ] .tif
+  * [ ] .psd
 * Tar
   * [ ] .tar
   * [ ] .gzip

@@ -1,11 +1,13 @@
 {
   "name": "buffer-type",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Detect content-type from Buffer data.",
   "main": "index.js",
   "scripts": {
-    "test": "make test-all",
-    "blanket": { 
+    "test": "make test-all"
+  },
+  "config": {
+    "blanket": {
       "pattern": "buffer-type/lib",
       "data-cover-flags": {
         "debug": false
@@ -27,13 +29,18 @@
     "mime": "*",
     "mocha": "*"
   },
+  "homepage": "https://github.com/node-modules/buffer-type",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fengmk2/buffer-type.git",
-    "web": "https://github.com/fengmk2/buffer-type"
+    "url": "git://github.com/node-modules/buffer-type.git",
+    "web": "https://github.com/node-modules/buffer-type"
   },
   "keywords": [
-    "buffer-type", "content-type", "buffer", "type", "filetype", "file extension", "buffer type"
+    "buffer-type",
+    "image-type",
+    "content-type", "buffer", "type",
+    "mime",
+    "filetype", "file extension", "buffer type"
   ],
   "engines": {
     "node": ">= 0.8.0"
