@@ -17,13 +17,14 @@ var should = require('should');
 var bt = require('../');
 
 var root = path.dirname(__dirname);
+var fixtures = path.join(__dirname, 'fixtures');
+var names = fs.readdirSync(fixtures);
 
-var names = fs.readdirSync(path.join(__dirname, 'fixtures'));
 describe('buffer-type.test.js', function () {
   names.forEach(function (name) {
 
     it('should check ' + name + ' work', function () {
-      var filepath = path.join(__dirname, 'fixtures', name);
+      var filepath = path.join(fixtures, name);
       var extname = path.extname(filepath);
       var contentType = mime.lookup(filepath);
       var expect = {
@@ -32,8 +33,10 @@ describe('buffer-type.test.js', function () {
       };
       if (contentType.indexOf('image/') === 0) {
         var m = /\_(\d+)x(\d+)/.exec(name);
-        expect.width = Number(m[1]);
-        expect.height = Number(m[2]);
+        if (m) {
+          expect.width = Number(m[1]);
+          expect.height = Number(m[2]);
+        }
       }
       var r = bt(fs.readFileSync(filepath));
       for (var k in expect) {

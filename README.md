@@ -50,6 +50,7 @@ console.log(info);
   * [√] .jpg
   * [√] .bmp
   * [√] .gif
+  * [√] .webp
 * Tar
   * [ ] .tar
   * [ ] .gzip
@@ -63,6 +64,7 @@ console.log(info);
 * Text
   * [ ] .xml
   * [ ] .html
+  * [ ] .json
 * Media
   * [ ] .mp3
   * [ ] .mp4
