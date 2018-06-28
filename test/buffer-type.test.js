@@ -1,20 +1,10 @@
-/*!
- * buffer-type - test/buffer-type.test.js
- * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
- * MIT Licensed
- */
-
-"use strict";
-
-/**
- * Module dependencies.
- */
+'use strict';
 
 var path = require('path');
 var fs = require('fs');
 var mime = require('mime');
 var should = require('should');
-var bt = require('../');
+var bt = require('..');
 
 var root = path.dirname(__dirname);
 var fixtures = path.join(__dirname, 'fixtures');
@@ -46,8 +36,17 @@ describe('buffer-type.test.js', function () {
 
   });
 
+  it('should detect jpeg', function () {
+    bt(fs.readFileSync(path.join(fixtures, 'buffer-type.jpg'))).should.eql({
+      type: 'image/jpeg',
+      extension: '.jpg',
+      width: 1600,
+      height: 459,
+    });
+  });
+
   it('should detect logo.png to .png', function () {
-    bt(fs.readFileSync(path.join(root, 'logo.png'))).should.eql({
+    bt(fs.readFileSync(path.join(fixtures, 'logo.png'))).should.eql({
       type: 'image/png',
       extension: '.png',
       width: 618,
