@@ -2,48 +2,45 @@
   "name": "buffer-type",
   "version": "0.0.2",
   "description": "Detect content-type from Buffer data.",
-  "main": "index.js",
+  "main": "lib/buffer-type.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "make test-all"
+    "lint": "eslint lib test",
+    "test-local": "egg-bin test",
+    "test": "npm run lint && npm run test-local",
+    "ci": "npm run lint && egg-bin cov"
   },
-  "config": {
-    "blanket": {
-      "pattern": "buffer-type/lib",
-      "data-cover-flags": {
-        "debug": false
-      }
-    },
-    "travis-cov": {
-      "threshold": 100
-    }
-  },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
-    "should": "*",
-    "blanket": "*",
-    "travis-cov": "*",
-    "coveralls": "*",
-    "mocha-lcov-reporter": "*",
-    "mime": "*",
-    "mocha": "*"
+    "egg-bin": "^4.7.0",
+    "egg-ci": "^1.8.0",
+    "eslint": "^5.0.1",
+    "eslint-config-egg": "^7.0.0",
+    "mime": "1"
   },
   "homepage": "https://github.com/node-modules/buffer-type",
   "repository": {
     "type": "git",
-    "url": "git://github.com/node-modules/buffer-type.git",
-    "web": "https://github.com/node-modules/buffer-type"
+    "url": "git://github.com/node-modules/buffer-type.git"
   },
   "keywords": [
     "buffer-type",
     "image-type",
-    "content-type", "buffer", "type",
+    "content-type",
+    "buffer",
+    "type",
     "mime",
-    "filetype", "file extension", "buffer type"
+    "filetype",
+    "file extension",
+    "buffer type"
   ],
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 8.0.0"
+  },
+  "ci": {
+    "version": "8, 10"
   },
   "author": "fengmk2 <fengmk2@gmail.com>",
   "license": "MIT"

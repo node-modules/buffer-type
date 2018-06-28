@@ -1,13 +1,28 @@
 buffer-type
 =======
 
-[![Build Status](https://secure.travis-ci.org/node-modules/buffer-type.png)](http://travis-ci.org/node-modules/buffer-type)
+[![NPM version][npm-image]][npm-url]
+[![NPM quality][quality-image]][quality-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![David deps][david-image]][david-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![NPM download][download-image]][download-url]
 
-[![Coverage Status](https://coveralls.io/repos/node-modules/buffer-type/badge.png)](https://coveralls.io/r/node-modules/buffer-type)
-
-[![NPM](https://nodei.co/npm/buffer-type.png?downloads=true&stars=true)](https://nodei.co/npm/buffer-type/)
-
-![logo](https://raw.github.com/node-modules/buffer-type/master/logo.png)
+[npm-image]: https://img.shields.io/npm/v/buffer-type.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/buffer-type
+[quality-image]: http://npm.packagequality.com/shield/buffer-type.svg?style=flat-square
+[quality-url]: http://packagequality.com/#?package=buffer-type
+[travis-image]: https://img.shields.io/travis/node-modules/buffer-type.svg?style=flat-square
+[travis-url]: https://travis-ci.org/node-modules/buffer-type
+[codecov-image]: https://img.shields.io/codecov/c/github/node-modules/buffer-type.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/node-modules/buffer-type
+[david-image]: https://img.shields.io/david/node-modules/buffer-type.svg?style=flat-square
+[david-url]: https://david-dm.org/node-modules/buffer-type
+[snyk-image]: https://snyk.io/test/npm/buffer-type/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/buffer-type
+[download-image]: https://img.shields.io/npm/dm/buffer-type.svg?style=flat-square
+[download-url]: https://npmjs.org/package/buffer-type
 
 Detect content-type from Buffer data.
 
@@ -20,10 +35,10 @@ $ npm install buffer-type
 ## Usage
 
 ```js
-var bt = require('buffer-type');
-var fs = require('fs');
+const bt = require('buffer-type');
+const fs = require('fs');
 
-var info = bt(fs.readFileSync(__dirname + '/logo.png'));
+const info = bt(fs.readFileSync(__dirname + '/logo.png'));
 console.log(info);
 // {
 //   type: 'image/png',
@@ -75,41 +90,6 @@ console.log(info);
   * [ ] .mp4
   * [ ] .avi
 
-## Authors
-
-```bash
-$ git summary
-
- project  : buffer-type
- repo age : 8 hours
- active   : 2 days
- commits  : 5
- files    : 17
- authors  :
-     5  fengmk2                 100.0%
-```
-
 ## License
 
-(The MIT License)
-
-Copyright (c) 2013 fengmk2 &lt;fengmk2@gmail.com&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+[MIT](LICENSE.txt)

@@ -1,53 +1,57 @@
-/*!
- * buffer-type - test/buffer-type.test.js
- * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
- * MIT Licensed
- */
+'use strict';
 
-"use strict";
+const assert = require('assert');
+const path = require('path');
+const fs = require('fs');
+const mime = require('mime');
+const bt = require('..');
 
-/**
- * Module dependencies.
- */
+const fixtures = path.join(__dirname, 'fixtures');
+const names = fs.readdirSync(fixtures);
 
-var path = require('path');
-var fs = require('fs');
-var mime = require('mime');
-var should = require('should');
-var bt = require('../');
+describe('buffer-type.test.js', () => {
+  names.forEach(name => {
 
-var root = path.dirname(__dirname);
-var fixtures = path.join(__dirname, 'fixtures');
-var names = fs.readdirSync(fixtures);
-
-describe('buffer-type.test.js', function () {
-  names.forEach(function (name) {
-
-    it('should check ' + name + ' work', function () {
-      var filepath = path.join(fixtures, name);
-      var extname = path.extname(filepath);
-      var contentType = mime.lookup(filepath);
-      var expect = {
+    it('should check ' + name + ' work', () => {
+      const filepath = path.join(fixtures, name);
+      const extname = path.extname(filepath);
+      const contentType = mime.lookup(filepath);
+      const expect = {
         type: contentType,
-        extension: extname
+        extension: extname,
       };
       if (contentType.indexOf('image/') === 0) {
-        var m = /\_(\d+)x(\d+)/.exec(name);
+        const m = /\_(\d+)x(\d+)/.exec(name);
         if (m) {
           expect.width = Number(m[1]);
           expect.height = Number(m[2]);
         }
       }
-      var r = bt(fs.readFileSync(filepath));
-      for (var k in expect) {
-        r.should.have.property(k, expect[k]);
+      const r = bt(fs.readFileSync(filepath));
+      assert(r);
+      for (const k in expect) {
+        assert(r[k] === expect[k]);
       }
     });
 
   });
 
-  it('should detect logo.png to .png', function () {
-    bt(fs.readFileSync(path.join(root, 'logo.png'))).should.eql({
+  it('should detect jpeg', () => {
+    assert.deepEqual(bt(fs.readFileSync(path.join(fixtures, 'buffer-type.jpg'))), {
+      type: 'image/jpeg',
+      extension: '.jpg',
+      width: 1600,
+      height: 459,
+    });
+
+    assert.deepEqual(bt(fs.readFileSync(path.join(fixtures, 'buffer-type.jpg')).slice(0, 10)), {
+      type: 'image/jpeg',
+      extension: '.jpg',
+    });
+  });
+
+  it('should detect logo.png to .png', () => {
+    assert.deepEqual(bt(fs.readFileSync(path.join(fixtures, 'logo.png'))), {
       type: 'image/png',
       extension: '.png',
       width: 618,
@@ -56,21 +60,21 @@ describe('buffer-type.test.js', function () {
       color: 6,
       compression: 0,
       filter: 0,
-      interlace: 0
+      interlace: 0,
     });
   });
 
-  it('should detect jpeg missing width and height', function () {
-    bt(fs.readFileSync(path.join(__dirname, 'fixtures', '1_607x78.jpg')).slice(0, 60)).should.eql({
+  it('should detect jpeg missing width and height', () => {
+    assert.deepEqual(bt(fs.readFileSync(path.join(__dirname, 'fixtures', '1_607x78.jpg')).slice(0, 60)), {
       type: 'image/jpeg',
-      extension: '.jpg'
+      extension: '.jpg',
     });
   });
 
-  it('should not detect any type', function () {
-    should.not.exist(bt());
-    should.not.exist(bt(new Buffer(0)));
-    should.not.exist(bt(new Buffer(200)));
-    should.not.exist(bt(new Buffer([0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 0x16, 0x00, 0x16, 0x00])));
+  it('should not detect any type', () => {
+    assert(!bt());
+    assert(!bt(new Buffer(0)));
+    assert(!bt(new Buffer(200)));
+    assert(!bt(new Buffer([ 0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 0x16, 0x00, 0x16, 0x00 ])));
   });
 });
