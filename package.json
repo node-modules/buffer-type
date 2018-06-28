@@ -1,6 +1,6 @@
 {
   "name": "buffer-type",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Detect content-type from Buffer data.",
   "main": "lib/buffer-type.js",
   "files": [
